@@ -30,4 +30,6 @@ app.use(
 
 app.listen(4000)
 
+module.exports = app;
+
 console.log("Running GraphQL at http://localhost:4000/graphql")
