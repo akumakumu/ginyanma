@@ -4,13 +4,13 @@ var { buildSchema } = require("graphql")
 
 var schema = buildSchema(`
     type Query {
-        hello: String
+        name: String
     }
 `)
 
 var root = {
-    hello: ()=> {
-        return "Hello World!"
+    name: ()=> {
+        return "Youne"
     },
 }
 
@@ -25,4 +25,5 @@ app.use(
 )
 
 app.listen(4000)
+
 console.log("Running GraphQL at http://localhost:4000/graphql")
