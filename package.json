@@ -4,8 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "compile": "tsc",
-    "start": "npm run compile && node ./dist/index.js"
+    "start": "node index.js"
   },
   "keywords": [],
   "author": "",
@@ -14,9 +13,5 @@
   "dependencies": {
     "@apollo/server": "^4.10.4",
     "graphql": "^16.8.1"
-  },
-  "devDependencies": {
-    "@types/node": "^20.12.11",
-    "typescript": "^5.4.5"
   }
 }

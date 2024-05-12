@@ -1,5 +1,5 @@
 import { ApolloServer } from '@apollo/server';
-import { startStandaloneServer } from '@apollo/server/standalone';
+const { startServerAndCreateHandler } = require('@apollo/server/handlers/node');
 
 const typeDefs = `#graphql
   type Profile {
@@ -31,8 +31,14 @@ const server = new ApolloServer({
     resolvers,
 });
 
-const { url } = await startStandaloneServer(server, {
-    listen: { port: 4000 },
+// const { url } = await startStandaloneServer(server, {
+//     listen: { port: 4000 },
+// });
+
+const handler = startServerAndCreateHandler(apolloServer, {
+    path: '/graphql',
 });
-  
+
+module.exports = handler;
+
 console.log(`🚀  Server ready at: ${url}`);
