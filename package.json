@@ -1,17 +1,22 @@
 {
   "name": "ginyanma",
   "version": "1.0.0",
-  "description": "A backend for youne",
+  "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "compile": "tsc",
+    "start": "npm run compile && node ./dist/index.js"
   },
+  "keywords": [],
   "author": "",
   "license": "ISC",
+  "type": "module",
   "dependencies": {
-    "cors": "^2.8.5",
-    "express": "^4.18.2",
-    "express-graphql": "^0.12.0",
+    "@apollo/server": "^4.10.4",
     "graphql": "^16.8.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.12.11",
+    "typescript": "^5.4.5"
   }
 }
