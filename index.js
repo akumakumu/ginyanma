@@ -2,6 +2,7 @@ var express = require("express")
 var { createHandler } = require("graphql-http/lib/use/express")
 var { buildSchema } = require("graphql")
 var { ruruHTML } = require("ruru/server")
+var cors = require('cors')
  
 var schema = buildSchema(`
   type Query {
@@ -16,6 +17,8 @@ var root = {
 }
  
 var app = express()
+
+app.use(cors())
  
 app.all(
   "/graphql",
