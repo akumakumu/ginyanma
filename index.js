@@ -1,5 +1,6 @@
 import { ApolloServer } from '@apollo/server';
 const { startServerAndCreateHandler } = require('@apollo/server/handlers/node');
+const cors = require('cors');
 
 const typeDefs = `#graphql
   type Profile {
@@ -37,6 +38,12 @@ const server = new ApolloServer({
 
 const handler = startServerAndCreateHandler(apolloServer, {
     path: '/graphql',
+},
+{
+    cors: {
+      origin: '*', 
+      credentials: true,
+    },
 });
 
 module.exports = handler;
