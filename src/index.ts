@@ -1,31 +1,28 @@
 import { ApolloServer } from '@apollo/server';
 import { startStandaloneServer } from '@apollo/server/standalone';
 
-const typeDefs = `#graphql
-  type Book {
-    title: String
-    author: String
+const typeDefs = `
+  type Profile {
+    name: String
   }
 
   type Query {
-    books: [Book]
+    profiles: [Profile]
   }
 `;
 
-const books = [
+const profiles = [
     {
-      title: 'The Awakening',
-      author: 'Kate Chopin',
+      name: 'kuu'
     },
     {
-      title: 'City of Glass',
-      author: 'Paul Auster',
+      name: 'alexandrovna'
     },
   ];
 
 const resolvers = {
     Query: {
-      books: () => books,
+      profiles: () => profiles,
     },
   };
 
