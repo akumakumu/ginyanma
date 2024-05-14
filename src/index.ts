@@ -1,15 +1,7 @@
 import { ApolloServer } from '@apollo/server';
 import { startStandaloneServer } from '@apollo/server/standalone';
 
-const typeDefs = `#graphql
-  type Profile {
-    name: String
-  }
-
-  type Query {
-    profiles: [Profile]
-  }
-`;
+import { typeDefs } from './schema.js'
 
 const profiles = [
     {
